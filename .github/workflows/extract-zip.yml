@@ -21,7 +21,14 @@ jobs:
       run: mkdir -p src
       working-directory: ${{ github.workspace }}
 
-    - name: Extract src.zip
-      run: unzip src.zip -d src
+    - name: List files in workspace
+      run: ls -R
       working-directory: ${{ github.workspace }}
-      
+
+    - name: Extract src.zip
+      run: unzip ${{ github.workspace }}/src.zip -d ${{ github.workspace }}/src
+      working-directory: ${{ github.workspace }}
+
+    - name: List files in src directory
+      run: ls -R src
+      working-directory: ${{ github.workspace }}
