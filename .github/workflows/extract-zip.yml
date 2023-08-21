@@ -1,0 +1,19 @@
+name: Extract src.zip
+on:
+  push:
+    paths:
+      - 'src.zip'
+
+jobs:
+  extract-src-zip:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Extract src.zip
+      run: |
+        mkdir -p src
+        unzip src.zip -d src
+      working-directory: ${{ github.workspace }}
