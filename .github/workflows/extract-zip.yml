@@ -1,3 +1,4 @@
+
 name: Extract src.zip
 on:
   push:
@@ -21,14 +22,10 @@ jobs:
       run: mkdir -p src
       working-directory: ${{ github.workspace }}
 
-    - name: List files in workspace
-      run: ls -R
-      working-directory: ${{ github.workspace }}
-
     - name: Extract src.zip
-      run: unzip ${{ github.workspace }}/src.zip -d ${{ github.workspace }}/src
+      run: unzip ${{ github.workspace }}/src.zip -d src/keychan\ Demo\ v0.89h
       working-directory: ${{ github.workspace }}
 
-    - name: List files in src directory
-      run: ls -R src
+    - name: Move extracted files to /src
+      run: mv ${{ github.workspace }}/src/keychan\ Demo\ v0.89h/* src/
       working-directory: ${{ github.workspace }}
