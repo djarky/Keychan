@@ -12,8 +12,15 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Create src directory
+      run: mkdir -p src
+      working-directory: ${{ github.workspace }}
+
     - name: Extract src.zip
-      run: |
-        mkdir -p src
-        unzip src.zip -d src
+      run: unzip src.zip -d src
       working-directory: ${{ github.workspace }}
