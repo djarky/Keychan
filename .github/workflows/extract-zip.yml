@@ -1,4 +1,3 @@
-
 name: Extract src.zip
 
 on:
@@ -34,4 +33,16 @@ jobs:
     - name: List files in src directory
       run: ls -R src
       working-directory: ${{ github.workspace }}
-      
+
+    - name: Configure Git
+      run: |
+        git config --global user.email "aivr_95@hotmail.com"
+        git config --global user.name "djarky"
+      working-directory: ${{ github.workspace }}
+
+    - name: Commit and Push Changes
+      run: |
+        git add .
+        git commit -m "Update extracted src.zip"
+        git push
+      working-directory: ${{ github.workspace }}
