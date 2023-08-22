@@ -1,4 +1,8 @@
 # Keychan
 Gbdk2020 game
 
-a simple backup for now, but when gb compo  finished... 
+esto es un ch`enko total, pero todito esta allí hasta lo que no debería estar 
+
+This is a big disaster, It's all there even it shouldn't
+
+No se takaka 
