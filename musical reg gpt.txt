@@ -1,0 +1,266 @@
+void play_anime_opening_melody() {
+  k = ((sys_time >> 3) % 32);
+  
+  switch(k) {
+    case 1:
+      play_sound_C1(0x12, 0x43, 0x86, 0x87, 0xC3);
+      break;
+    case 2:
+      play_sound_C1(0x10, 0x43, 0x86, 0x88, 0xC4);
+      break;
+    case 3:
+      play_sound_C1(0x0E, 0x43, 0x86, 0x89, 0xC5);
+      break;
+    case 4:
+      play_sound_C1(0x0B, 0x43, 0x86, 0x8A, 0xC6);
+      break;
+    case 5:
+      play_sound_C1(0x08, 0x43, 0x86, 0x8B, 0xC7);
+      break;
+    case 6:
+      play_sound_C2(0x32, 0x52, npc_pos_x_abs[0], 0xC4);
+      break;
+    case 7:
+      play_sound_C2(0x30, 0x52, npc_pos_x_abs[1], 0xC4);
+      break;
+    case 8:
+      play_sound_C2(0x2E, 0x52, npc_pos_x_abs[2], 0xC4);
+      break;
+    case 9:
+      play_sound_C2(0x2C, 0x52, npc_pos_x_abs[3], 0xC4);
+      break;
+    case 10:
+      play_sound_C2(0x2A, 0x52, npc_pos_x_abs[4], 0xC4);
+      break;
+    case 11:
+      play_sound_C4(0x30, 0x8F, 0x70, 0xC0);
+      break;
+    case 12:
+      play_sound_C4(0x2E, 0x8F, 0x70, 0xC0);
+      break;
+    case 13:
+      play_sound_C4(0x2C, 0x8F, 0x70, 0xC0);
+      break;
+    case 14:
+      play_sound_C4(0x2A, 0x8F, 0x70, 0xC0);
+      break;
+    case 15:
+      play_sound_C4(0x28, 0x8F, 0x70, 0xC0);
+      break;
+    case 16:
+      play_sound_C1(0x15, 0x43, 0x86, 0x8C, 0xC8);
+      break;
+    case 17:
+      play_sound_C1(0x17, 0x43, 0x86, 0x8D, 0xC9);
+      break;
+    case 18:
+      play_sound_C1(0x19, 0x43, 0x86, 0x8E, 0xCA);
+      break;
+    case 19:
+      play_sound_C1(0x1C, 0x43, 0x86, 0x8F, 0xCB);
+      break;
+    case 20:
+      play_sound_C1(0x1F, 0x43, 0x86, 0x90, 0xCC);
+      break;
+    case 21:
+      play_sound_C2(0x36, 0x52, npc_pos_x_abs[5], 0xC4);
+      break;
+    case 22:
+      play_sound_C2(0x38, 0x52, npc_pos_x_abs[6], 0xC4);
+      break;
+    case 23:
+      play_sound_C2(0x3A, 0x52, npc_pos_x_abs[7], 0xC4);
+      break;
+    case 24:
+      play_sound_C2(0x3C, 0x52, npc_pos_x_abs[8], 0xC4);
+      break;
+    case 25:
+      play_sound_C2(0x3E, 0x52, npc_pos_x_abs[9], 0xC4);
+      break;
+    case 26:
+      play_sound_C4(0x28, 0x8F, 0x70, 0xC0);
+      break;
+    case 27:
+      play_sound_C4(0x26, 0x8F, 0x70, 0xC0);
+      break;
+    case 28:
+      play_sound_C4(0x24, 0x8F, 0x70, 0xC0);
+      break;
+    case 29:
+      play_sound_C4(0x22, 0x8F, 0x70, 0xC0);
+      break;
+    case 30:
+      play_sound_C4(0x20, 0x8F, 0x70, 0xC0);
+      break;
+    case 31:
+      play_sound_C1(0x22, 0x43, 0x86, 0x91, 0xCD);
+      break;
+    case 32:
+      play_sound_C1(0x20, 0x43, 0x86, 0x92, 0xCE);
+      break;
+  }
+}
+void play_anime_opening_melody() {
+  k = ((sys_time >> 3) % 32);
+
+  UBYTE npc_count = get_npc_count();  // Obtener la cantidad de personajes no jugadores (NPCs)
+
+  switch(k) {
+    case 1:
+      if (npc_count > 0) {
+        play_sound_C1(0x12, 0x43, 0x86, 0x87, 0xC3);
+      }
+      break;
+    case 2:
+      if (npc_count > 1) {
+        play_sound_C1(0x10, 0x43, 0x86, 0x88, 0xC4);
+      }
+      break;
+    case 3:
+      // Agregar aquí más condiciones if para personalizar la melodía según las circunstancias del juego
+      break;
+    case 4:
+      if (npc_count > 0 && npc_dir[0] != DEAD_WAY) {
+        play_sound_C1(0x0B, 0x43, 0x86, 0x8A, 0xC6);
+      }
+      break;
+    case 5:
+      // Agregar aquí más condiciones if para personalizar la melodía según las circunstancias del juego
+      break;
+    case 6:
+      // Agregar aquí más condiciones if para personalizar la melodía según las circunstancias del juego
+      break;
+    case 7:
+      if (npc_count > 0) {
+        play_sound_C4(0x30, 0x8F, 0x70, 0xC0);
+      }
+      break;
+    case 8:
+      if (npc_count > 1 && npc_dir[1] != DEAD_WAY) {
+        play_sound_C2(0x36, 0x52, npc_pos_x_abs[1], 0xC4);
+      }
+      break;
+    case 9:
+      // Agregar aquí más condiciones if para personalizar la melodía según las circunstancias del juego
+      break;
+    // Continuar con los demás casos del switch
+    case 30:
+      if (npc_count > 2) {
+        play_sound_C1(0x1A, 0x43, 0x86, 0x91, 0xCD);
+      }
+      break;
+    case 31:
+      if (npc_count > 3) {
+        play_sound_C1(0x18, 0x43, 0x86, 0x92, 0xCE);
+      }
+      break;
+    case 32:
+      // Agregar aquí más condiciones if para personalizar la melodía según las circunstancias del juego
+      break;
+  }
+}
+
+void play_pueblo_lavanda_melody() {
+  k = ((sys_time >> 3) % 32);
+
+  switch (k) {
+    case 1:
+      play_sound_C1(0x16, 0x43, 0x86, 0x87, 0xC3);
+      break;
+    case 2:
+      play_sound_C1(0x15, 0x43, 0x86, 0x88, 0xC4);
+      break;
+    case 3:
+      play_sound_C1(0x13, 0x43, 0x86, 0x89, 0xC5);
+      break;
+    case 4:
+      play_sound_C1(0x11, 0x43, 0x86, 0x8A, 0xC6);
+      break;
+    case 5:
+      play_sound_C1(0x0F, 0x43, 0x86, 0x8B, 0xC7);
+      break;
+    case 6:
+      play_sound_C1(0x0D, 0x43, 0x86, 0x8C, 0xC8);
+      break;
+    case 7:
+      play_sound_C1(0x0B, 0x43, 0x86, 0x8D, 0xC9);
+      break;
+    case 8:
+      play_sound_C1(0x0A, 0x43, 0x86, 0x8E, 0xCA);
+      break;
+    case 9:
+      play_sound_C1(0x08, 0x43, 0x86, 0x8F, 0xCB);
+      break;
+    case 10:
+      play_sound_C1(0x07, 0x43, 0x86, 0x90, 0xCC);
+      break;
+    case 11:
+      play_sound_C1(0x05, 0x43, 0x86, 0x91, 0xCD);
+      break;
+    case 12:
+      play_sound_C1(0x04, 0x43, 0x86, 0x92, 0xCE);
+      break;
+    case 13:
+      play_sound_C1(0x02, 0x43, 0x86, 0x93, 0xCF);
+      break;
+    case 14:
+      play_sound_C1(0x01, 0x43, 0x86, 0x94, 0xD0);
+      break;
+    case 15:
+      play_sound_C2(0x36, 0x52, npc_pos_x_abs[0], 0xC4);
+      break;
+    case 16:
+      play_sound_C2(0x35, 0x52, npc_pos_x_abs[1], 0xC4);
+      break;
+    case 17:
+      play_sound_C2(0x34, 0x52, npc_pos_x_abs[2], 0xC4);
+      break;
+    case 18:
+      play_sound_C2(0x33, 0x52, npc_pos_x_abs[3], 0xC4);
+      break;
+    case 19:
+      play_sound_C2(0x32, 0x52, npc_pos_x_abs[4], 0xC4);
+      break;
+    case 20:
+      play_sound_C2(0x31, 0x52, npc_pos_x_abs[5], 0xC4);
+      break;
+    case 21:
+      play_sound_C2(0x30, 0x52, npc_pos_x_abs[6], 0xC4);
+      break;
+    case 22:
+      play_sound_C2(0x2F, 0x52, npc_pos_x_abs[7], 0xC4);
+      break;
+    case 23:
+      play_sound_C2(0x2E, 0x52, npc_pos_x_abs[8], 0xC4);
+      break;
+    case 24:
+      play_sound_C2(0x2D, 0x52, npc_pos_x_abs[9], 0xC4);
+      break;
+    case 25:
+      play_sound_C2(0x2C, 0x52, npc_pos_x_abs[10], 0xC4);
+      break;
+    case 26:
+      play_sound_C2(0x2B, 0x52, npc_pos_x_abs[11], 0xC4);
+      break;
+    case 27:
+      play_sound_C2(0x2A, 0x52, npc_pos_x_abs[12], 0xC4);
+      break;
+    case 28:
+      play_sound_C2(0x29, 0x52, npc_pos_x_abs[13], 0xC4);
+      break;
+    case 29:
+      play_sound_C2(0x28, 0x52, npc_pos_x_abs[14], 0xC4);
+      break;
+    case 30:
+      play_sound_C4(0x3B, 0x51, 0xB8, 0xC0);
+      break;
+    case 31:
+      play_sound_C4(0x3A, 0x51, 0xB8, 0xC0);
+      break;
+    case 32:
+      play_sound_C4(0x39, 0x51, 0xB8, 0xC0);
+      break;
+  }
+}
+
+
