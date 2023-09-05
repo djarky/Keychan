@@ -12,4 +12,10 @@ For grafics use tools like GBMB and GBTD, and GBtool MegamanX to convert bmp/png
 
 For music use 🥛MilkyTracker to composite, and gb-player to play it, also i made dinamic music using sound registers directly
 
+# compilation
 
+run `make.bat` under Windows (only tested with gbdk-4.1.0 in Windows XP) 
+
+```
+|||
+```
