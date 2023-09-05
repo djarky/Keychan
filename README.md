@@ -15,3 +15,6 @@ For music use [🥛Milky Tracker](https://milkytracker.org/) to composite, and [
 # compilation
 
 run `make.bat` under Windows (only tested with gbdk-4.1.0 in Windows XP) 
+
+Note: change `GBDK_PATH` with a folder that contain your gbdk 
+
