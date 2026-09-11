@@ -1,0 +1,5 @@
+#include"mylibs/show_bars.c"
+#include"mylibs/draw_map.h"
+#include"mylibs/generator.h"
+#include"mylibs/map_manager.h"
+#include"mylibs/level_manager.h"
