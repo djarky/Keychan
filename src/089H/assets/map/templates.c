@@ -1,8 +1,0 @@
-#include"template1.c"
-#include"template2.c"
-#include"template3.c"
-#include"template4.c"
-#include"template5.c"
-#include"template6.c"
-#include"template7.c"
-#include"template8.c"
