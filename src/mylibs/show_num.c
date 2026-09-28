@@ -1,3 +1,4 @@
+/*
 #ifndef _ARKY_SHOW_NUM_C
 #define _ARKY_SHOW_NUM_C
 
@@ -33,6 +34,25 @@ case 0x07:set_win_tiles(POSX+2,POSY,1,1,"7");break;
 case 0x08:set_win_tiles(POSX+2,POSY,1,1,"8");break;
 case 0x09:set_win_tiles(POSX+2,POSY,1,1,"9");break;
 }
+
+}
+
+#endif
+*/
+
+#ifndef ARKY_SHOW_NUM_C
+#define ARKY_SHOW_NUM_C
+
+void SHOW_NUME(UBYTE POSX, UBYTE POSY, UBYTE NUM)
+{
+UBYTE tiles[3];
+
+tiles[0] = 304 + (NUM / 100);                   //304 is a index of "0" tile_data on vram
+tiles[1] = 304 + ((NUM / 10) % 10);
+tiles[2] = 304 + (NUM % 10);
+
+set_win_tiles(POSX, POSY, 3, 1, tiles);
+
 
 }
 
