@@ -9,6 +9,6 @@
 #include "wav/keychan.c"
 
 
-void play_sample2() __banked {
+void play_sample2(void) __banked {
   set_sample(_current_bank, keychan_gbw, sizeof(keychan_gbw)); 
 }

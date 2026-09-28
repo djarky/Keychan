@@ -8,7 +8,7 @@
 #include "wav/arigato.c"
 
 
-void play_sample1() __banked {
+void play_sample1(void) __banked {
   set_sample(_current_bank, arigato_gbw, sizeof(arigato_gbw)); 
 }
 
